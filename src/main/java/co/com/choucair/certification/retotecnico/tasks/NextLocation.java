@@ -20,8 +20,7 @@ public class NextLocation implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.wasAbleTo(Click.on(UtestRegistrationLocationPage.NEXT_LOCATION_BUTTON),
-                Enter.theValue("").into(UtestRegistrationLocationPage.INPUT_CITY),
+        actor.attemptsTo(Click.on(UtestRegistrationLocationPage.NEXT_LOCATION_BUTTON),
                 Enter.theValue("507").into(UtestRegistrationLocationPage.INPUT_ZIP)
         );
     }

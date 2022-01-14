@@ -20,8 +20,14 @@ public class NextDevice implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.wasAbleTo(Click.on(UtestRegistrationDevicePage.NEXT_DEVICES_BUTTON)
-                //SelectFromOptions.byVisibleText("macOS").from(UtestRegistrationDevicePage.INPUT_OS)
-        );
+        actor.attemptsTo(Click.on(UtestRegistrationDevicePage.NEXT_DEVICES_BUTTON),
+                SelectFromOptions.byVisibleText("macOS").from(UtestRegistrationDevicePage.INPUT_OS),
+                SelectFromOptions.byVisibleText("OS X 10.6").from(UtestRegistrationDevicePage.INPUT_OS),
+                SelectFromOptions.byVisibleText("English").from(UtestRegistrationDevicePage.INPUT_OS),
+                SelectFromOptions.byVisibleText("Fly").from(UtestRegistrationDevicePage.INPUT_OS),
+                SelectFromOptions.byVisibleText("IQ260").from(UtestRegistrationDevicePage.INPUT_OS),
+                SelectFromOptions.byVisibleText("Android 2.3").from(UtestRegistrationDevicePage.INPUT_OS)
+            );
+
     }
 }
