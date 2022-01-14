@@ -1,5 +1,6 @@
 package co.com.choucair.certification.retotecnico.tasks;
 
+import co.com.choucair.certification.retotecnico.userinterface.UtestRegistrationDevicePage;
 import co.com.choucair.certification.retotecnico.userinterface.UtestRegistrationLocationPage;
 import co.com.choucair.certification.retotecnico.userinterface.UtestRegistrationPersonalPage;
 import net.serenitybdd.screenplay.Actor;
@@ -9,20 +10,18 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import org.openqa.selenium.remote.server.handler.ClickElement;
 
-public class NextLocation implements Task {
+public class NextDevice implements Task {
 
 
     public static Performable onThePage() {
-        return Tasks.instrumented(NextLocation.class);
+        return Tasks.instrumented(NextDevice.class);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.wasAbleTo(Click.on(UtestRegistrationLocationPage.NEXT_LOCATION_BUTTON),
-                Enter.theValue("").into(UtestRegistrationLocationPage.INPUT_CITY),
-                Enter.theValue("507").into(UtestRegistrationLocationPage.INPUT_ZIP)
+        actor.wasAbleTo(Click.on(UtestRegistrationDevicePage.NEXT_DEVICES_BUTTON)
+                //SelectFromOptions.byVisibleText("macOS").from(UtestRegistrationDevicePage.INPUT_OS)
         );
     }
 }

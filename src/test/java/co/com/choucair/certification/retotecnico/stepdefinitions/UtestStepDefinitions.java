@@ -1,6 +1,7 @@
 package co.com.choucair.certification.retotecnico.stepdefinitions;
 
 import co.com.choucair.certification.retotecnico.tasks.JoinToday;
+import co.com.choucair.certification.retotecnico.tasks.NextDevice;
 import co.com.choucair.certification.retotecnico.tasks.NextLocation;
 import co.com.choucair.certification.retotecnico.tasks.OpenUp;
 import cucumber.api.java.Before;
@@ -24,7 +25,7 @@ public class UtestStepDefinitions {
 
     @When("^he click on the Join Today button$")
     public void heClickOnTheJoinTodayButton() {
-        OnStage.theActorInTheSpotlight().attemptsTo(NextLocation.onThePage());
+        OnStage.theActorInTheSpotlight().attemptsTo(NextLocation.onThePage(), NextDevice.onThePage());
     }
 
     @Then("^he need to fill out all the forms until the last step and create the account$")
