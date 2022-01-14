@@ -9,10 +9,16 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.server.handler.ClickElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.concurrent.TimeUnit;
 
 public class NextLocation implements Task {
-
 
     public static Performable onThePage() {
         return Tasks.instrumented(NextLocation.class);
@@ -20,8 +26,9 @@ public class NextLocation implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
+       //Using geolocation to know my City and Country
         actor.attemptsTo(Click.on(UtestRegistrationLocationPage.NEXT_LOCATION_BUTTON),
-                Enter.theValue("507").into(UtestRegistrationLocationPage.INPUT_ZIP)
+                Enter.theValue("041302").into(UtestRegistrationLocationPage.INPUT_ZIP)
         );
     }
 }

@@ -5,5 +5,5 @@ Feature: Utest Registration
   @scenario1
   Scenario: Register on the page
     Given than Edgardo wants to create an account on the page
-    When he click on the Join Today button
-    Then he need to fill out all the forms until the last step and create the account
+    When he start to complete all the forms
+    Then he finish the forms and create the account

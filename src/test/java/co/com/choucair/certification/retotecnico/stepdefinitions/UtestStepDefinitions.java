@@ -1,9 +1,6 @@
 package co.com.choucair.certification.retotecnico.stepdefinitions;
 
-import co.com.choucair.certification.retotecnico.tasks.JoinToday;
-import co.com.choucair.certification.retotecnico.tasks.NextDevice;
-import co.com.choucair.certification.retotecnico.tasks.NextLocation;
-import co.com.choucair.certification.retotecnico.tasks.OpenUp;
+import co.com.choucair.certification.retotecnico.tasks.*;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -23,13 +20,13 @@ public class UtestStepDefinitions {
         OnStage.theActorCalled("Edgardo").wasAbleTo(OpenUp.thePage(), JoinToday.onThePage());
     }
 
-    @When("^he click on the Join Today button$")
-    public void heClickOnTheJoinTodayButton() {
-        OnStage.theActorInTheSpotlight().attemptsTo(NextLocation.onThePage(), NextDevice.onThePage());
+    @When("^he start to complete all the forms$")
+    public void heStartToCompleteAllTheForms() {
+        OnStage.theActorInTheSpotlight().attemptsTo(NextLocation.onThePage(), NextDevice.onThePage(), NextLastStep.onThePage());
     }
 
-    @Then("^he need to fill out all the forms until the last step and create the account$")
-    public void heNeedToFillOutAllTheFormsUntilTheLastStepAndCreateTheAccount() {
-
+    @Then("^he finish the forms and create the account$")
+    public void heFinishTheFormsAndCreateTheAccount() {
+        OnStage.theActorInTheSpotlight().attemptsTo(CompleteSetup.onThePage());
     }
 }
