@@ -1,5 +1,6 @@
 package co.com.choucair.certification.retotecnico.stepdefinitions;
 
+import co.com.choucair.certification.retotecnico.tasks.JoinToday;
 import co.com.choucair.certification.retotecnico.tasks.OpenUp;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -17,7 +18,7 @@ public class ChoucairTechnicalChallengeStepDefinitions {
 
     @Given("^than Edgardo wants to create an account on the page$")
     public void thanEdgardoWantsToCreateAnAccountOnThePage() {
-        OnStage.theActorCalled("Edgardo").wasAbleTo(OpenUp.thePage());
+        OnStage.theActorCalled("Edgardo").wasAbleTo(OpenUp.thePage(), JoinToday.onThePage());
     }
 
     @When("^he click on the Join Today button$")
@@ -25,8 +26,8 @@ public class ChoucairTechnicalChallengeStepDefinitions {
 
     }
 
-    @Then("^he can fill out the form and create the account$")
-    public void heCanFillOutTheFormAndCreateTheAccount() {
+    @Then("^he need to fill out all the forms until the last step and create the account$")
+    public void heNeedToFillOutAllTheFormsUntilTheLastStepAndCreateTheAccount() {
 
     }
 }
