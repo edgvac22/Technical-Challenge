@@ -1,5 +1,6 @@
 package co.com.choucair.certification.retotecnico.stepdefinitions;
 
+import co.com.choucair.certification.retotecnico.tasks.OpenUp;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -16,7 +17,7 @@ public class ChoucairTechnicalChallengeStepDefinitions {
 
     @Given("^than Edgardo wants to create an account on the page$")
     public void thanEdgardoWantsToCreateAnAccountOnThePage() {
-
+        OnStage.theActorCalled("Edgardo").wasAbleTo(OpenUp.thePage());
     }
 
     @When("^he click on the Join Today button$")
