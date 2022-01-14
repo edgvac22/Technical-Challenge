@@ -9,7 +9,7 @@ import cucumber.api.java.en.When;
 import net.serenitybdd.screenplay.actors.OnStage;
 import net.serenitybdd.screenplay.actors.OnlineCast;
 
-public class ChoucairTechnicalChallengeStepDefinitions {
+public class UtestStepDefinitions {
 
     @Before
     public void setStage () {

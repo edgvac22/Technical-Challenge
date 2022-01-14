@@ -1,6 +1,6 @@
 #Author: Edgardo Vaca
 @stories
-Feature: Technical Challenge Choucair
+Feature: Utest Registration
   As a user, I want to create an account on Utest.com
   @scenario1
   Scenario: Register on the page
