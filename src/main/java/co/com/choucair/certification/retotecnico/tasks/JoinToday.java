@@ -9,14 +9,6 @@ import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.server.handler.ClickElement;
-import org.openqa.selenium.support.ui.ISelect;
-import org.openqa.selenium.support.ui.Select;
-
-import static afu.org.checkerframework.checker.units.UnitsTools.s;
 
 public class JoinToday implements Task {
 
@@ -27,7 +19,6 @@ public class JoinToday implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
 
-        Select dropDownSelect;
         actor.attemptsTo(Click.on(UtestRegistrationPersonalPage.JOIN_TODAY_BUTTON),
                 Enter.theValue("Edgardo").into(UtestRegistrationPersonalPage.INPUT_FIRST_NAME),
                 Enter.theValue("Vaca").into(UtestRegistrationPersonalPage.INPUT_LAST_NAME),
