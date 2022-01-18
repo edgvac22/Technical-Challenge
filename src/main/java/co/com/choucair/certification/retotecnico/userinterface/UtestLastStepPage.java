@@ -11,4 +11,5 @@ public class UtestLastStepPage extends PageObject {
     public static final Target INPUT_STAY_INFORMED = Target.the("where do I click if I want to stay informed").located(By.name("newsletterOptIn"));
     public static final Target INPUT_TERM_OF_USE = Target.the("where do I click if I want to accept the term of use").located(By.name("termOfUse"));
     public static final Target INPUT_PRIVACY = Target.the("where do I click if I want to accept the privacy and security policy").located(By.name("privacySetting"));
+    public static final Target NAME_STEP = Target.the("extract the name of the step title").located(By.xpath("//h1[contains(text(), 'The last step')]"));
 }

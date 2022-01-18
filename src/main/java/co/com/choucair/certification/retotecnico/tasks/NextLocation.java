@@ -27,9 +27,7 @@ public class NextLocation implements Task {
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(UtestRegistrationLocationPage.NEXT_LOCATION_BUTTON),
-                Enter.theValue("Panama City").into(UtestRegistrationLocationPage.INPUT_CITY),
-                Enter.theValue("041302").into(UtestRegistrationLocationPage.INPUT_ZIP),
-                SelectFromOptions.byVisibleText("Panama").from(UtestRegistrationLocationPage.INPUT_CITY_EXACTLY)
+                SelectFromOptions.byVisibleText("American Samoa").from(UtestRegistrationLocationPage.INPUT_COUNTRY)
         );
     }
 }
