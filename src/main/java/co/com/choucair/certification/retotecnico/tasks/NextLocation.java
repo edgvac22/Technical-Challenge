@@ -20,14 +20,23 @@ import java.util.concurrent.TimeUnit;
 
 public class NextLocation implements Task {
 
-    public static Performable onThePage() {
-        return Tasks.instrumented(NextLocation.class);
+    private String strCity;
+    private String strZip;
+
+    public NextLocation(String strCity, String strZip) {
+        this.strCity = strCity;
+        this.strZip = strZip;
+    }
+
+    public static NextLocation onThePage(String strCity, String strZip) {
+        return Tasks.instrumented(NextLocation.class, strCity, strZip);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(Click.on(UtestRegistrationLocationPage.NEXT_LOCATION_BUTTON),
-                SelectFromOptions.byVisibleText("American Samoa").from(UtestRegistrationLocationPage.INPUT_COUNTRY)
+                Enter.theValue(strCity).into(UtestRegistrationLocationPage.INPUT_CITY),
+                Enter.theValue(strZip).into(UtestRegistrationLocationPage.INPUT_ZIP)
         );
     }
 }

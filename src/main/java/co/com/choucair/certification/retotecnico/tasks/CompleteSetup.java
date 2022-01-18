@@ -9,7 +9,7 @@ import net.serenitybdd.screenplay.actions.Click;
 
 public class CompleteSetup implements Task {
 
-    public static Performable onThePage() {
+    public static CompleteSetup onThePage() {
         return Tasks.instrumented(CompleteSetup.class);
     }
 

@@ -12,6 +12,5 @@ public class UtestRegistrationPersonalPage extends PageObject {
     public static final Target INPUT_MONTH_OF_BIRTH = Target.the("where do we put the month of birth").located(By.name("birthMonth"));
     public static final Target INPUT_DAY_OF_BIRTH = Target.the("where do we put the day of birth").located(By.name("birthDay"));
     public static final Target INPUT_YEAR_OF_BIRTH = Target.the("where do we put the year of birth").located(By.name("birthYear"));
-    public static final Target INPUT_LANGUAGES = Target.the("where do we put the languages that I know").located(By.id("languages"));
     public static final Target NEXT_LOCATION_BUTTON = Target.the("button to confirm login").located(By.xpath("//a[contains(@class, 'btn btn-blue')]"));
 }
