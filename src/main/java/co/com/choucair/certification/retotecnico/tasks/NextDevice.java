@@ -9,7 +9,9 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
+import org.openqa.selenium.Keys;
 
 public class NextDevice implements Task {
 
@@ -35,20 +37,26 @@ public class NextDevice implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(UtestRegistrationDevicePage.NEXT_DEVICES_BUTTON),
-                Click.on(UtestRegistrationDevicePage.INPUT_OS),
-                SelectFromOptions.byVisibleText(strOS).from((UtestRegistrationDevicePage.INPUT_OS)),
-                Click.on(UtestRegistrationDevicePage.INPUT_VERSION),
-                SelectFromOptions.byVisibleText(strVersion).from(UtestRegistrationDevicePage.INPUT_VERSION),
-                Click.on(UtestRegistrationDevicePage.INPUT_OS_LANGUAGE),
-                SelectFromOptions.byVisibleText(strOSLanguage).from(UtestRegistrationDevicePage.INPUT_OS_LANGUAGE),
-                Click.on(UtestRegistrationDevicePage.INPUT_BRAND),
-                SelectFromOptions.byVisibleText(strBrand).from(UtestRegistrationDevicePage.INPUT_BRAND),
-                Click.on(UtestRegistrationDevicePage.INPUT_MODEL),
-                SelectFromOptions.byVisibleText(strModel).from(UtestRegistrationDevicePage.INPUT_MODEL),
-                Click.on(UtestRegistrationDevicePage.INPUT_OS_PHONE),
-                SelectFromOptions.byVisibleText(strOSPhone).from(UtestRegistrationDevicePage.INPUT_OS_PHONE)
+        actor.attemptsTo(
+                Click.on(UtestRegistrationDevicePage.INPUT_OS_FIRST),
+                Enter.theValue(strOS).into(UtestRegistrationDevicePage.INPUT_OS),
+                Hit.the(Keys.ENTER).into(UtestRegistrationDevicePage.INPUT_OS),
+                Click.on(UtestRegistrationDevicePage.INPUT_VERSION_FIRST),
+                Enter.theValue(strVersion).into(UtestRegistrationDevicePage.INPUT_VERSION),
+                Hit.the(Keys.ENTER).into(UtestRegistrationDevicePage.INPUT_VERSION),
+                Click.on(UtestRegistrationDevicePage.INPUT_OS_LANGUAGE_FIRST),
+                Enter.theValue(strOSLanguage).into(UtestRegistrationDevicePage.INPUT_OS_LANGUAGE),
+                Hit.the(Keys.ENTER).into(UtestRegistrationDevicePage.INPUT_OS_LANGUAGE),
+                Click.on(UtestRegistrationDevicePage.INPUT_BRAND_FIRST),
+                Enter.theValue(strBrand).into(UtestRegistrationDevicePage.INPUT_BRAND),
+                Hit.the(Keys.ENTER).into(UtestRegistrationDevicePage.INPUT_BRAND),
+                Click.on(UtestRegistrationDevicePage.INPUT_MODEL_FIRST),
+                Enter.theValue(strModel).into(UtestRegistrationDevicePage.INPUT_MODEL),
+                Hit.the(Keys.ENTER).into(UtestRegistrationDevicePage.INPUT_MODEL),
+                Click.on(UtestRegistrationDevicePage.INPUT_OS_PHONE_FIRST),
+                Enter.theValue(strOSPhone).into(UtestRegistrationDevicePage.INPUT_OS_PHONE),
+                Hit.the(Keys.ENTER).into(UtestRegistrationDevicePage.INPUT_OS_PHONE),
+                Click.on(UtestRegistrationDevicePage.NEXT_LAST_STEP_BUTTON)
         );
-
     }
 }

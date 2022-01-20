@@ -35,8 +35,7 @@ public class UtestStepDefinitions {
                 NextDevice.onThePage(utestData.get(0).getStrOS(), utestData.get(0).getStrVersion(),
                         utestData.get(0).getStrOSLanguage(), utestData.get(0).getStrBrand(),
                         utestData.get(0).getStrModel(), utestData.get(0).getStrOSPhone()),
-                NextLastStep.onThePage(utestData.get(0).getStrPassword(), utestData.get(0).getStrConfirmPassword()),
-                CompleteSetup.onThePage());
+                NextLastStep.onThePage(utestData.get(0).getStrPassword(), utestData.get(0).getStrConfirmPassword()));
     }
 
     @Then("^he create the account$")

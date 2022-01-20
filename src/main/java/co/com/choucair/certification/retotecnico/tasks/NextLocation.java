@@ -8,8 +8,10 @@ import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.Tasks;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
+import net.serenitybdd.screenplay.actions.Hit;
 import net.serenitybdd.screenplay.actions.SelectFromOptions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.server.handler.ClickElement;
@@ -34,9 +36,11 @@ public class NextLocation implements Task {
 
     @Override
     public <T extends Actor> void performAs(T actor) {
-        actor.attemptsTo(Click.on(UtestRegistrationLocationPage.NEXT_LOCATION_BUTTON),
+        actor.attemptsTo(
                 Enter.theValue(strCity).into(UtestRegistrationLocationPage.INPUT_CITY),
-                Enter.theValue(strZip).into(UtestRegistrationLocationPage.INPUT_ZIP)
+                Hit.the(Keys.ARROW_DOWN).into(UtestRegistrationLocationPage.INPUT_CITY),
+                Enter.theValue(strZip).into(UtestRegistrationLocationPage.INPUT_ZIP),
+                Click.on(UtestRegistrationLocationPage.NEXT_DEVICE_BUTTON)
         );
     }
 }

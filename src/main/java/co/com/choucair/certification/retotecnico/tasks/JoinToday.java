@@ -41,7 +41,6 @@ public class JoinToday implements Task {
                 Enter.theValue(strEmailAddress).into(UtestRegistrationPersonalPage.INPUT_EMAIL_ADDRESS),
                 Click.on(UtestRegistrationPersonalPage.INPUT_MONTH_OF_BIRTH),
                 SelectFromOptions.byVisibleText(strMonthOfBirth).from(UtestRegistrationPersonalPage.INPUT_MONTH_OF_BIRTH),
-
                 Click.on(UtestRegistrationPersonalPage.INPUT_DAY_OF_BIRTH),
                 SelectFromOptions.byVisibleText(strDayOfBirth).from(UtestRegistrationPersonalPage.INPUT_DAY_OF_BIRTH),
                 Click.on(UtestRegistrationPersonalPage.INPUT_YEAR_OF_BIRTH),

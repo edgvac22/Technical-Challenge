@@ -13,9 +13,9 @@ public class NextLastStep implements Task {
     private String strPassword;
     private String strConfirmPassword;
 
-    public NextLastStep(String strPassword, String strConfirmPassword) {
+    public NextLastStep(String strPassword) {
         this.strPassword = strPassword;
-        this.strConfirmPassword = strConfirmPassword;
+        this.strConfirmPassword = strPassword;
     }
 
     public static NextLastStep onThePage(String strPassword, String strConfirmPassword) {
